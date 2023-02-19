@@ -1,7 +1,7 @@
-import typer
 from loguru import logger
+from typer import Typer
 
-app = typer.Typer()
+app = Typer()
 
 
 @app.command()
