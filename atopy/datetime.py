@@ -3,10 +3,10 @@ from time import time_ns
 
 from pytz import BaseTzInfo, timezone, utc
 
-ITzInfo = BaseTzInfo
+BTzInfo = BaseTzInfo
 
 
-def pytz_timezone(s: str) -> ITzInfo:
+def tzinfo(s: str) -> BTzInfo:
     return timezone(s)
 
 
@@ -17,7 +17,7 @@ def utc_localize(utc_naive: datetime) -> datetime:
     return utc.localize(utc_naive)
 
 
-def utc_astimezone(utc_aware: datetime, tz: ITzInfo) -> datetime:
+def utc_astimezone(utc_aware: datetime, tz: BTzInfo) -> datetime:
     """
     aware: datetime with timezone information
     """

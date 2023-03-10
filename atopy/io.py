@@ -1,6 +1,6 @@
 from json import dump, load
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 
 def mkdir(path: str) -> None:
@@ -8,7 +8,7 @@ def mkdir(path: str) -> None:
     p.mkdir(parents=True, exist_ok=True)
 
 
-def json_read(path: str) -> Optional[Any]:
+def json_read(path: str) -> None | Any:
     p = Path(path)
     if not p.exists():
         return None
@@ -16,7 +16,7 @@ def json_read(path: str) -> Optional[Any]:
         return load(fp)
 
 
-def json_write(path: str, data: Any, indent: Optional[int] = 4) -> None:
+def json_write(path: str, data: Any, indent: None | int = 4) -> None:
     p = Path(path)
     with open(p, "wt", encoding="UTF-8") as fp:
         dump(data, fp, indent=indent)
