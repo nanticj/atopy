@@ -1,5 +1,4 @@
 from decimal import ROUND_CEILING, ROUND_DOWN, ROUND_FLOOR, ROUND_UP, Decimal
-from typing import Optional
 
 
 def di_floor(d: Decimal) -> Decimal:
@@ -23,7 +22,7 @@ def di_up(d: Decimal) -> Decimal:
 
 
 def div(
-    dividend: Decimal, divisor: Decimal, val: Optional[Decimal] = None
+    dividend: Decimal, divisor: Decimal, val: None | Decimal = None
 ) -> Decimal:
     if divisor == 0:
         if val is None:

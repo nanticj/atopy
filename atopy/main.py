@@ -1,7 +1,8 @@
-import typer
 from loguru import logger
 
-app = typer.Typer()
+from atopy.typer import typer
+
+app = typer()
 
 
 @app.command()
